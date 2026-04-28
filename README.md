@@ -10,7 +10,8 @@ A deliberately vulnerable social media clone for security testing and learning.
 ### Run the Lab
 
 ```bash
-docker run -p 8000:8000 marcothedebugger/cybergram
+docker build -t marcothedebugger/cybergram:local .
+docker run -p 8000:8000 marcothedebugger/cybergram:local
 ```
 
 Open **http://localhost:8000** in your browser.
@@ -19,9 +20,9 @@ Open **http://localhost:8000** in your browser.
 
 | Username | Password |
 |----------|----------|
-| admin | admin123 |
-| alice | password |
-| bob | bob2024 |
+| admin    | admin123 |
+| alice    | password |
+| bob      | bob2024  |
 
 ### Reset the Lab
 
