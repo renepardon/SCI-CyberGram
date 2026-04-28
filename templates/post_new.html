@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-page">
+    <h2>New Post</h2>
+
+    <!-- VULN: No CSRF token -->
+    <form method="POST" action="/post/new" enctype="multipart/form-data">
+        <label for="image">Image</label>
+        <!-- VULN: Unrestricted file upload -->
+        <input type="file" name="image" id="image" required>
+
+        <label for="caption">Caption</label>
+        <textarea name="caption" id="caption" rows="3" placeholder="Write a caption..."></textarea>
+
+        <button type="submit">Post</button>
+    </form>
+</div>
+{% endblock %}

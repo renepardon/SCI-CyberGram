@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #fafafa;
+    color: #262626;
+    line-height: 1.5;
+}
+
+a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #262626;
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #262626;
+    font-size: 0.9rem;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* Login */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fafafa;
+}
+
+.login-box {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #8e8e8e;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.error-msg {
+    background: #fdd;
+    color: #c00;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    border: 1px solid #fcc;
+}
+
+/* Forms */
+form input[type="text"],
+form input[type="password"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #dbdbdb;
+    background: #fafafa;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: #0095f6;
+    color: #fff;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #0081d6;
+}
+
+/* Post Card */
+.post-card {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #262626;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.post-image {
+    width: 100%;
+    display: block;
+}
+
+.post-body {
+    padding: 12px 16px;
+}
+
+.post-body p {
+    margin-bottom: 4px;
+}
+
+.view-comments {
+    font-size: 0.85rem;
+    color: #8e8e8e;
+}
+
+.post-date {
+    font-size: 0.75rem;
+    color: #8e8e8e;
+}
+
+/* Avatars */
+.avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-placeholder-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #dbdbdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+/* Profile Page */
+.profile-header {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-placeholder-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #dbdbdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-title-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.profile-title-row h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.post-count {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.bio {
+    font-size: 0.9rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #dbdbdb;
+    background: #fafafa;
+    color: #262626;
+    cursor: pointer;
+}
+
+.btn-edit {
+    border: 1px solid #dbdbdb;
+    background: #fafafa;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #ed4956;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Profile Grid */
+.profile-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
+.grid-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+/* Comments */
+.comments-section {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 16px;
+}
+
+.comments-section h3 {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.comment {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.comment strong {
+    margin-right: 6px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.comment-form input {
+    flex: 1;
+    margin-bottom: 0 !important;
+}
+
+.comment-form button {
+    width: auto;
+    padding: 10px 20px;
+}
+
+/* Form Page */
+.form-page {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 24px;
+}
+
+.form-page h2 {
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+}
+
+/* Delete Form */
+.delete-form {
+    margin: 0;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    color: #8e8e8e;
+    padding: 40px 0;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGram</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    {% if user %}
+    <nav class="navbar">
+        <a href="/" class="logo">CyberGram</a>
+        <div class="nav-links">
+            <a href="/">Feed</a>
+            <a href="/post/new">+ New Post</a>
+            <a href="/profile/{{ user['username'] }}">{{ user['username'] }}</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+    {% endif %}
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

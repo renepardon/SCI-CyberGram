@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-page">
+    <h2>Edit Profile: {{ profile_user['username'] }}</h2>
+
+    <!-- VULN: No CSRF token, IDOR in action URL -->
+    <form method="POST" action="/profile/edit/{{ profile_user['id'] }}" enctype="multipart/form-data">
+        <label for="bio">Bio</label>
+        <textarea name="bio" id="bio" rows="4" placeholder="Write something about yourself...">{{ profile_user['bio'] }}</textarea>
+
+        <label for="profile_pic">Profile Picture</label>
+        <!-- VULN: Unrestricted file upload - no accept attribute enforced server-side -->
+        <input type="file" name="profile_pic" id="profile_pic">
+
+        {% if profile_user['profile_pic'] %}
+        <p>Current: <img src="{{ profile_user['profile_pic'] }}" alt="" class="avatar-small"></p>
+        {% endif %}
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+{% endblock %}
