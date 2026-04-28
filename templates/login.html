@@ -16,7 +16,6 @@
             <div class="error-msg">{{ error }}</div>
             {% endif %}
 
-            <!-- VULN: No CSRF token -->
             <form method="POST" action="/login">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>

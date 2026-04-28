@@ -13,11 +13,9 @@
         <div class="profile-info">
             <div class="profile-title-row">
                 <h2>{{ profile_user['username'] }}</h2>
-                <!-- VULN: IDOR - edit link uses profile_user id, anyone can click -->
                 <a href="/profile/edit/{{ profile_user['id'] }}" class="btn btn-edit">Edit Profile</a>
             </div>
             <p class="post-count">{{ posts | length }} post(s)</p>
-            <!-- VULN: Stored XSS - bio rendered without escaping -->
             <p class="bio">{{ profile_user['bio'] | safe }}</p>
         </div>
     </div>

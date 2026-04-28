@@ -24,7 +24,6 @@
             <img src="{{ post['image'] }}" alt="Post image" class="post-image">
         </a>
         <div class="post-body">
-            <!-- VULN: Stored XSS - caption rendered without escaping -->
             <p><strong>{{ post['username'] }}</strong> {{ post['caption'] | safe }}</p>
             <a href="/post/{{ post['id'] }}" class="view-comments">View post &rarr;</a>
         </div>

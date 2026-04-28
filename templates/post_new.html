@@ -4,10 +4,8 @@
 <div class="form-page">
     <h2>New Post</h2>
 
-    <!-- VULN: No CSRF token -->
     <form method="POST" action="/post/new" enctype="multipart/form-data">
         <label for="image">Image</label>
-        <!-- VULN: Unrestricted file upload -->
         <input type="file" name="image" id="image" required>
 
         <label for="caption">Caption</label>

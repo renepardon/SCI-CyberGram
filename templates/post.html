@@ -12,7 +12,6 @@
                 {% endif %}
                 <span>{{ post['username'] }}</span>
             </a>
-            <!-- VULN: IDOR - any user can delete any post, no CSRF token -->
             <form method="POST" action="/post/{{ post['id'] }}/delete" class="delete-form">
                 <button type="submit" class="btn-delete" onclick="return confirm('Delete this post?')">Delete</button>
             </form>
@@ -21,7 +20,6 @@
         <img src="{{ post['image'] }}" alt="Post image" class="post-image">
 
         <div class="post-body">
-            <!-- VULN: Stored XSS -->
             <p><strong>{{ post['username'] }}</strong> {{ post['caption'] | safe }}</p>
             <span class="post-date">{{ post['created_at'] }}</span>
         </div>
@@ -33,7 +31,6 @@
         {% for comment in comments %}
         <div class="comment">
             <a href="/profile/{{ comment['username'] }}"><strong>{{ comment['username'] }}</strong></a>
-            <!-- VULN: Stored XSS - comment rendered without escaping -->
             <span>{{ comment['content'] | safe }}</span>
         </div>
         {% endfor %}
@@ -42,7 +39,6 @@
         <p class="empty-state">No comments yet.</p>
         {% endif %}
 
-        <!-- VULN: No CSRF token -->
         <form method="POST" action="/post/{{ post['id'] }}/comment" class="comment-form">
             <input type="text" name="content" placeholder="Add a comment..." required>
             <button type="submit">Post</button>
